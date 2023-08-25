@@ -31,7 +31,12 @@ function myBubSort(arr) {
   for (let i = 0; i < arr.length - 1; i++) {
     console.log(`Outer loop ${arr[i]} and next number ${arr[i + 1]}`);
     // the inner loop used to compare
-    for (let j = 0; j < arr.length - 1; j++) {
+    console.log(
+      ` j greater than arr.length${arr.length} - i${i} - 1${1} = ${
+        arr.length - i - 1
+      }`
+    );
+    for (let j = 0; j < arr.length - i - 1; j++) {
       console.log(`inner loop ${arr[j]} and next number ${arr[j + 1]}`);
       // the condition to compare if the current arr[i] number is greater than the next number arr[i+1]
       console.log(`is current number ${arr[j]} > ${arr[j + 1]}`);
@@ -44,7 +49,7 @@ function myBubSort(arr) {
         console.log(` current ${arr[j]}`);
         // set the next number in the array to the temp number
         arr[j + 1] = temp;
-        console.log(`next${arr[j + 1]}`);
+        console.log(`next ${arr[j + 1]}`);
         console.log(arr);
       }
     }
