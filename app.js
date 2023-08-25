@@ -32,11 +32,11 @@ function myBubSort(arr) {
     console.log(`Outer loop ${arr[i]} and next number ${arr[i + 1]}`);
     // the inner loop used to compare
     console.log(
-      ` j greater than arr.length${arr.length} - i${i} - 1${1} = ${
+      ` j greater than arr.length:${arr.length} - i:${i} - 1:${1} = ${
         arr.length - i - 1
       }`
     );
-    for (let j = 0; j < arr.length - i - 1; j++) {
+    for (let j = 0; j < arr.length - 1 - i; j++) {
       console.log(`inner loop ${arr[j]} and next number ${arr[j + 1]}`);
       // the condition to compare if the current arr[i] number is greater than the next number arr[i+1]
       console.log(`is current number ${arr[j]} > ${arr[j + 1]}`);
@@ -57,4 +57,33 @@ function myBubSort(arr) {
   console.log({ arr });
 }
 
-myBubSort(array);
+// myBubSort(array);
+
+/*
+sort name in alphabetical order
+["Alice", "Bob", "Eve", "David", "Carol"]
+*/
+
+const namesArr = ["Alice", "Bob", "Eve", "David", "Carol"];
+
+function sortNames(arr) {
+  // outer loop
+  for (let i = 0; i < arr.length - 1; i++) {
+    // inner loop to compare the names
+    console.log(`outter current ${arr[i]} and the array [${arr}]`)
+    for (let p = 0; p < arr.length - i - 1; p++) {
+      console.log(`inner current ${arr[p]} and next number ${arr[p+1]} and the array [${arr}]`)
+      console.log(`comparing the unicode value of names ${arr[p]} > ${arr[p+1]} `)
+      if (arr[p] > arr[p + 1]) {
+        let temp = arr[p];
+
+        // swapping current with greater and the next with the tmep
+        arr[p] = arr[p + 1];
+        arr[p + 1] = temp;
+      }
+    }
+  }
+  console.log({ arr });
+}
+
+sortNames(namesArr);
