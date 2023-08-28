@@ -26,7 +26,8 @@ Given an unsorted array [7, 2, 4, 1, 5], perform a step-by-step Bubble Sort to s
 
 // mission is to sort the array
 // After each pass, write down the intermediate state of the array
-const array = [3, 5, 4, 8, 2];
+// const array = [3, 5, 4, 8, 2];
+const array = [3, 5, 4, 8, -2, -1, 1, 0];
 function myBubSort(arr) {
   for (let i = 0; i < arr.length - 1; i++) {
     console.log(`Outer loop ${arr[i]} and next number ${arr[i + 1]}`);
@@ -57,7 +58,7 @@ function myBubSort(arr) {
   console.log({ arr });
 }
 
-// myBubSort(array);
+myBubSort(array);
 
 /*
 sort name in alphabetical order
@@ -77,7 +78,7 @@ function sortNames(arr) {
       if (arr[p] > arr[p + 1]) {
         let temp = arr[p];
 
-        // swapping current with greater and the next with the tmep
+        // swapping current with greater and the next with the temp
         arr[p] = arr[p + 1];
         arr[p + 1] = temp;
       }
@@ -86,4 +87,4 @@ function sortNames(arr) {
   console.log({ arr });
 }
 
-sortNames(namesArr);
+// sortNames(namesArr);
