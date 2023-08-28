@@ -73,8 +73,10 @@ function sortySelection(array) {
     console.log`outter array [${array}]`;
     for (let j = i + 1; j < array.length; j++) {
       // 3nd have inner loop that starts at j= i+ 1 so that were to get the next number to be used to compare
-      console.log(`if array[j]: ${array[j]} < array[minIndex]: ${array[minIndex]}`)
-      console.log(`inner loop array moment [${array}]`)
+      console.log(
+        `if array[j]: ${array[j]} < array[minIndex]: ${array[minIndex]}`
+      );
+      console.log(`inner loop array moment [${array}]`);
       if (array[j] < array[minIndex]) {
         minIndex = j; // 1
         console.log(`inner loop minIndex: ${minIndex}`);
@@ -101,4 +103,26 @@ function sortySelection(array) {
   // array now is [34, 64, 25, 12, 22, 11, 90];
 }
 
-sortySelection(array2);
+// sortySelection(array2);
+
+function selectiveSort(array) {
+  for (let i = 0; i < array.length - 1; i++) {
+    let minIndex = i;
+
+    for (let j = i + 1; j < array.length; j++) {
+
+      if (array[j] < array[minIndex]) {
+        minIndex = j;
+      }
+    }
+
+    if (minIndex !== i) {
+      let temp = array[i];
+      array[i] = array[minIndex];
+      array[minIndex] = temp
+    }
+  }
+  return array;
+}
+
+console.log(selectiveSort(array2));
